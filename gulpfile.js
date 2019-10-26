@@ -6,6 +6,7 @@ const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
 const browserSync = require('browser-sync').create();
 const gcmq = require('gulp-group-css-media-queries');
+const smartgrid = require('smart-grid');
 
 const config = {
   root: './src/',
