@@ -72,12 +72,12 @@ gulp.task('watch', gulp.series('browserSync', function() {
   gulp.watch(config.root + config.js.dev, gulp.parallel('js'));
 }));
 
-gulp.task('grid', function (done) {
+gulp.task('grid', function(done) {
   smartgrid('src/less', {
-      container: {
-          maxWidth: '1170px'
-      }
-    });
-    
-    done();
+    container: {
+      maxWidth: '1170px',
+    },
+  });
+
+  done();
 });
