@@ -3,12 +3,24 @@
 
 .reset();
 
-*,
-*::after,
-*::before {
-  box-sizing: border-box;
+// *,
+// *::after,
+// *::before {
+//   box-sizing: border-box;
+// }
+
+body {
+  max-width: 1440px;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  .wrapper();
+}
 
-
-
+.announcement-block {
+  height: 1000px;
+  background: url(../images/background.png) no-repeat;
+  background-position: center;
+}
