@@ -16,7 +16,11 @@ a {
 body {
   margin: 0 auto;
   max-width: 1440px;
+}
+
+.wrapper {
   font-family: "Work Sans", sans-serif;
+  font-size: 14px;
 }
 
 h1,
@@ -31,14 +35,118 @@ h2,
   font-size: 30px;
 }
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  .wrapper();
-}
-
 .announcement-block {
   min-height: 1000px;
   background: url(../images/background.png) no-repeat center;
+
+  &__header {
+    padding-top: 48px;
+    margin-right: 19px;
+  }
+
+  &__content {
+    .wrapper();
+  }
+
+  &__add-info-block {
+
+    margin-top: 140px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 71px;
+  }
 }
 
+.header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1150px;
+
+  .xs(justify-content, center);
+
+  &__logo {
+    .xs-block( {
+        margin-bottom: 20px;
+        text-align: center;
+        min-width: 90%;
+      });
+  }
+
+  &__nav {
+    .xs(padding, 0px);
+    .xs(min-width, 90%);
+  }
+}
+
+.logo {
+  flex: 0 1 98px;
+  height: 40px;
+  color: #ffffff;
+}
+
+.nav {
+  padding-left: 60px;
+  display: flex;
+  justify-content: space-between;
+  flex: 0 1 324px;
+  font-size: 16px;
+  color: #ffffff;
+}
+
+.add-info-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 512px;
+  min-height: 231px;
+  color: #ffffff;
+
+  &__header {
+    text-align: center;
+    font-family: "Work Sans - Semi Bold", sans-serif;
+  }
+
+  &__text {
+    margin-top: 28px;
+    font-size: 15px;
+  }
+
+  &__buttons {
+    position: relative;
+    margin-top: 47px;
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 339px;
+  }
+}
+
+.info-block-button {
+  padding: 12px 33px 18px 35px;
+  font-family: "Work Sans - Semi Bold", sans-serif;
+  color: #ffffff;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+  transition: all .125s ease;
+
+  &:hover {
+    background: #ffffff;
+    color: @colorHeaderTextBlack;
+  }
+}
+
+.add-info-block__info-block-button {
+  margin-left: 18px;
+
+  .xs-block( {
+      margin: 0;
+      position: absolute;
+      top: 70px;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+
+  );
+}
