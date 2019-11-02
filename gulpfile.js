@@ -4,7 +4,7 @@ const less = require('gulp-less');
 const babel = require('gulp-babel');
 const autoprefixer = require('gulp-autoprefixer');
 const cleanCSS = require('gulp-clean-css');
-const browserSync = require('browser-sync').create();
+// const browserSync = require('browser-sync').create();
 const gcmq = require('gulp-group-css-media-queries');
 const smartgrid = require('smart-grid');
 
@@ -36,10 +36,10 @@ gulp.task('build', function(done) {
       .pipe(cleanCSS({
         level: 2,
       }))
-      .pipe(gulp.dest(config.root + config.css.dest))
-      .pipe(browserSync.reload({
-        stream: true,
-      }));
+      .pipe(gulp.dest(config.root + config.css.dest));
+  // .pipe(browserSync.reload({
+  //   stream: true,
+  // }));
 
   done();
 });
@@ -47,29 +47,29 @@ gulp.task('build', function(done) {
 gulp.task('js', function() {
   return gulp.src(config.root + config.js.src)
       .pipe(babel())
-      .pipe(gulp.dest(config.root + config.js.prod))
-      .pipe(browserSync.reload({
-        stream: true,
-      }));
+      .pipe(gulp.dest(config.root + config.js.prod));
+  // .pipe(browserSync.reload({
+  //   stream: true,
+  // }));
 });
 
-gulp.task('browserSync', function(done) {
-  browserSync.init({
-    server: {
-      baseDir: config.root,
-    },
-  });
+// gulp.task('browserSync', function(done) {
+//   browserSync.init({
+//     server: {
+//       baseDir: config.root,
+//     },
+//   });
 
-  done();
-});
+//   done();
+// });
 
-gulp.task('watch', gulp.series('browserSync', function() {
+gulp.task('watch', gulp.series(function() {
   gulp.watch(config.root + config.css.watch, gulp.parallel('build'));
-  gulp.watch(config.root + config.html.src, gulp.parallel(function(done) {
-    browserSync.reload();
+  // gulp.watch(config.root + config.html.src, gulp.parallel(function(done) {
+  //   browserSync.reload();
 
-    done();
-  }));
+  //   done();
+  // }));
   gulp.watch(config.root + config.js.dev, gulp.parallel('js'));
 }));
 
