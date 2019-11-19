@@ -267,7 +267,7 @@ h2,
 
 .advantages-box {
   min-height: 1094px;
-  background: #fafafc;
+  background: @colorBackgroundGrey;
 
   &__inner {
     padding-top: 112px;
@@ -608,4 +608,27 @@ h2,
     margin-left: 79px;
     max-width: 354px;
   }
+}
+
+.code {
+  display: flex;
+  justify-content: center;
+  min-height: 476px;
+  background: @colorBackgroundGrey;
+
+  &__content {
+    justify-content: space-between;
+    .wrapper();
+    .row-flex();
+  }
+}
+
+.code-block {
+  .col();
+  .size(6);
+}
+
+.necessary-block {
+  .col();
+  .size(5);
 }
