@@ -30,7 +30,7 @@ gulp.task('build', function(done) {
       .pipe(less())
       .pipe(gcmq())
       .pipe(autoprefixer({
-        browsers: ['> 0.1%'],
+        overrideBrowserslist: ['last 2 versions'],
         cascade: false,
       }))
       .pipe(cleanCSS({
